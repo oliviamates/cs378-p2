@@ -6,6 +6,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // Hint: You can use the image name to get the image from the images folder.
 const MenuItem = ({ title , image, description, price}) => {
     const [count, setCount] = useState(0);
+
+    const decrease = () => {
+        if(count > 0) {
+            setCount(count - 1);
+        }
+    }
     return (
 
     <div className="foodimage">
@@ -15,7 +21,8 @@ const MenuItem = ({ title , image, description, price}) => {
             <h6>{description}</h6>
             <div className="combine">
                 <h4 id="price">{price}</h4>
-                <button onClick={ () => setCount(count - 1)}>-</button>
+
+                <button onClick={decrease}>-</button>
                 <h5>{count}</h5>
                 <button onClick={ () => setCount(count + 1)}>+</button>
             </div>
