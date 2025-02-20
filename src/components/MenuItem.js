@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // This is a functional component that represents a single menu item. It currently takes in the title and displays it in an h2 element.
 // Modify the component to take in all the other properties of a menu item you need and display them in the component.
 // Use bootstrap to style the elements so that it looks like the mockup in the assignment.
 // Hint: You can use the image name to get the image from the images folder.
 const MenuItem = ({ title , image, description, price}) => {
+    const [count1, setCount] = useState(0);
     return (
 
     <div className="foodimage">
@@ -14,9 +15,9 @@ const MenuItem = ({ title , image, description, price}) => {
             <h6>{description}</h6>
             <div className="combine">
                 <h4 id="price">{price}</h4>
-                <button>+</button>
-                <h5>Count</h5>
-                <button>-</button>
+                <button onClick={ () => setCount(count - 1)}>-</button>
+                <h5>{count}</h5>
+                <button onClick={ () => setCount(count + 1)}>+</button>
             </div>
         </div>
         
