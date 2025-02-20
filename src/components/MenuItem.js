@@ -14,7 +14,9 @@ const MenuItem = ({ title , image, description, price}) => {
             <h6>{description}</h6>
             <div className="combine">
                 <h4 id="price">{price}</h4>
-                <button>Add</button>
+                <button>+</button>
+                <h5>Count</h5>
+                <button>-</button>
             </div>
         </div>
         
