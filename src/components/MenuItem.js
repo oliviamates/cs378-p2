@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // Use bootstrap to style the elements so that it looks like the mockup in the assignment.
 // Hint: You can use the image name to get the image from the images folder.
 const MenuItem = ({ title , image, description, price}) => {
-    const [count1, setCount] = useState(0);
+    const [count, setCount] = useState(0);
     return (
 
     <div className="foodimage">
