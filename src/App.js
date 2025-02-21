@@ -111,10 +111,10 @@ function App() {
       
     </div>
     <div className = "ordering">
-      <h5>Subtotal: </h5>
+      <h5>Subtotal: $</h5>
       <h5>{subtotal.toFixed(2)}</h5>
-      <button className = "order">Order</button>
-      <button className = "order" onClick={() => setSubtotal(0)}>Clear All</button>
+      <button className = "order1">Order</button>
+      <button className = "order2" onClick={() => setSubtotal(0)}>Clear All</button>
 
     </div>
 

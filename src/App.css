@@ -52,11 +52,18 @@
   display: block;
 }
 
-.order {
+.order1 {
   border-radius: 15px;
   background-color: lightgrey; 
   height: 30px; 
   width: 70px; 
+}
+
+.order1 {
+  border-radius: 15px;
+  background-color: lightgrey; 
+  height: 30px; 
+  width: 100px; 
 }
 
 
