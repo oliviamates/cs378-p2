@@ -1,7 +1,16 @@
-.buttons {
-    height: 22px; 
-    width: 22px;
+.button1 {
+    height: 20px; 
+    width: 20px;
     border-radius: 15px;
     padding: 20px;
+    margin-right: 10px;
     
+  }
+
+  .button2 {
+    height: 20px; 
+    width: 20px;
+    border-radius: 15px;
+    padding: 20px;
+    margin-left: 10px; 
   }

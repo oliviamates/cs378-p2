@@ -57,6 +57,7 @@
   background-color: lightgrey; 
   height: 23px; 
   width: 70px; 
+  margin-left: 70px;
 }
 
 .order2 {
@@ -64,6 +65,7 @@
   background-color: lightgrey; 
   height: 23px; 
   width: 100px; 
+  margin-left: 25px; 
 }
 
 
