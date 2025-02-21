@@ -119,9 +119,9 @@ function App() {
       
     </div>
     <div className = "ordering">
-      <h5>Subtotal: $</h5>
-      <h5>{subtotal.toFixed(2)}</h5>
-      <button className = "order1" onclick= {() => alertOrder(subtotal)}>Order</button>
+      <h4>Subtotal: $</h4>
+      <h4>{subtotal.toFixed(2)}</h4>
+      <button className="order1" onClick={() => alertOrder(subtotal)}>Order</button>
 
       <button className = "order2" onClick={() => setSubtotal(0)}>Clear All</button>
 
