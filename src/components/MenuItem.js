@@ -9,12 +9,10 @@ const MenuItem = ({ id, title , image, description, price, count, updateSubtotal
     
     const decrease = () => {
         if(count > 0) {
-            setCount(count - 1);
             updateSubtotal(id, price, -1);
         }
     }
     const increase = () => {
-        setCount(count + 1);
         updateSubtotal(id, price, 1);
     }
 
