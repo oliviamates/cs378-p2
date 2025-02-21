@@ -28,9 +28,9 @@ const MenuItem = ({ title , image, description, price, updateSubtotal}) => {
             <h6>{description}</h6>
             <div className="combine">
                 <h4 id="price">{price}</h4>
-                <button onClick={decrease}>-</button>
+                <button className = "buttons" onClick={decrease}>-</button>
                 <h5>{count}</h5>
-                <button onClick={increase}>+</button>
+                <button className = "buttons" onClick={increase}>+</button>
 
             </div>
         </div>
