@@ -90,7 +90,7 @@ function alertOrder(total) {
 };
 
 
-function clear() {
+function clearTotal() {
   setSubtotal(0);
   setItemCounts(menuItems.reduce((acc, item) => ({ ...acc, [item.id]: 0 }), {}));
 }
@@ -140,7 +140,7 @@ function App() {
       <h4>{subtotal.toFixed(2)}</h4>
       <button className="order1" onClick={() => alertOrder(subtotal)}>Order</button>
 
-      <button className = "order2" onClick={() => clear()}>Clear All</button>
+      <button className = "order2" onClick={() => clearTotal()}>Clear All</button>
 
     </div>
 
