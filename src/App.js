@@ -87,7 +87,7 @@ function App() {
   const updateSubtotal = (price, quantityChange) => {
     setSubtotal((prevSubtotal) => {
       const newtotal = prevSubtotal + (price * quantityChange);
-      return newtotal.toFixed(2);
+      return parseFloat(newtotal.toFixed(2));
     });
   };
 
@@ -110,7 +110,7 @@ function App() {
         ))}
       
     </div>
-    <div>
+    <div className = "ordering">
       <h5>Subtotal: </h5>
       <h5>{subtotal.toFixed(2)}</h5>
       <button className = "order">Order</button>
