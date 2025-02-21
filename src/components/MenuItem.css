@@ -1,16 +1,14 @@
 .button1 {
-    height: 20px; 
-    width: 20px;
+    height: 25px; 
+    width: 25px;
     border-radius: 15px;
-    padding: 20px;
     margin-right: 10px;
     
   }
 
   .button2 {
-    height: 20px; 
-    width: 20px;
+    height: 25px; 
+    width: 25px;
     border-radius: 15px;
-    padding: 20px;
     margin-left: 10px; 
   }
