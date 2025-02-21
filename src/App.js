@@ -119,7 +119,7 @@ function App() {
       
     </div>
     <div className = "ordering">
-      <h4>Subtotal: $</h4>
+      <h4>Subtotal:$ </h4>
       <h4>{subtotal.toFixed(2)}</h4>
       <button className="order1" onClick={() => alertOrder(subtotal)}>Order</button>
 
