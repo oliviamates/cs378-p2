@@ -85,7 +85,8 @@ function App() {
   const [subtotal, setSubtotal] = useState(0);
 
   const updateSubtotal = (price, quantityChange) => {
-    setSubtotal((prevSubtotal) => prevSubtotal + (price * quantityChange))
+      const newtotal = prevSubtotal + (price * quantityChange);
+      return newtotal.toFixed(2);
   };
 
   return (
