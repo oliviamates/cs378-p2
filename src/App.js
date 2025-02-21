@@ -106,11 +106,14 @@ function App() {
         ))}
       
     </div>
+    <div>
+      <h5>Subtotal: </h5>
+      <h5>{subtotal}</h5>
+      <button className = "order">Order</button>
+      <button className = "order" onClick={() => setSubtotal(0)}>Clear All</button>
 
-    <h5>Subtotal: </h5>
-    <h5>{subtotal}</h5>
-    <button>Order</button>
-    <button>Clear All</button>
+    </div>
+
     </div>
 
   );

@@ -55,5 +55,11 @@ button {
   display: block;
 }
 
+.order {
+  border-radius: 15px;
+  background-color: grey; 
+  height: 40px; 
+  width: 60px; 
+}
 
 
