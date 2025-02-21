@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import MenuItem from './components/MenuItem';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
+import { clear } from '@testing-library/user-event/dist/clear';
 
 // import 'bootstrap/dist/css/bootstrap.min.css'; // This imports bootstrap css styles. You can use bootstrap or your own classes by using the className attribute in your elements.
 
@@ -89,14 +90,28 @@ function alertOrder(total) {
 };
 
 
+function clear() {
+  setSubtotal(0);
+  setItemCounts(menuItems.reduce((acc, item) => ({ ...acc, [item.id]: 0 }), {}));
+}
+
+
 function App() {
   const [subtotal, setSubtotal] = useState(0);
+  const [itemcounts, setItemCounts] = useState(
+    menuItems.reduce((acc, item) => ({ ...acc, [item.id]: 0 }), {})
+  );
 
-  const updateSubtotal = (price, quantityChange) => {
+  const updateSubtotal = (id, price, quantityChange) => {
     setSubtotal((prevSubtotal) => {
       const newtotal = prevSubtotal + (price * quantityChange);
       return parseFloat(newtotal.toFixed(2));
     });
+
+    setItemCounts((prevCounts) => ({
+      ...prevCounts,
+      [id]: prevCounts[id] + quantityChange,
+    }));
   };
 
   return (
@@ -110,9 +125,11 @@ function App() {
           <MenuItem 
             key={item.id}
             image={item.imageName}
+            id= {item.id}
             title={item.title}
             description={item.description}
             price={item.price}
+            count={itemcount[item.id]}
             updateSubtotal ={updateSubtotal}
           />   
         ))}
@@ -123,7 +140,7 @@ function App() {
       <h4>{subtotal.toFixed(2)}</h4>
       <button className="order1" onClick={() => alertOrder(subtotal)}>Order</button>
 
-      <button className = "order2" onClick={() => setSubtotal(0)}>Clear All</button>
+      <button className = "order2" onClick={() => clear()}>Clear All</button>
 
     </div>
 
