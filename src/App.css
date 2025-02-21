@@ -17,7 +17,7 @@
 
 button {
   height: 20px; 
-  border-radius: 30%;
+  border-radius: 15px;
   
 }
 
@@ -57,9 +57,9 @@ button {
 
 .order {
   border-radius: 15px;
-  background-color: grey; 
-  height: 40px; 
-  width: 60px; 
+  background-color: lightgrey; 
+  height: 30px; 
+  width: 70px; 
 }
 
 

@@ -109,7 +109,7 @@ function App() {
     </div>
     <div>
       <h5>Subtotal: </h5>
-      <h5>{subtotal}</h5>
+      <h5>{subtotal.toFixed(2)}</h5>
       <button className = "order">Order</button>
       <button className = "order" onClick={() => setSubtotal(0)}>Clear All</button>
 
