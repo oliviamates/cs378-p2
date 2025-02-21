@@ -80,38 +80,40 @@ const menuItems = [
     price: 9.99,
   }
 ];
-function alertOrder(total) {
-  if(total == 0){
-    alert("No items in the cart!");
-  }
-  else {
-    alert("You ordered: "); 
-  }
-};
 
 
-function clearTotal() {
-  setSubtotal(0);
-  setItemCounts(menuItems.reduce((acc, item) => ({ ...acc, [item.id]: 0 }), {}));
-}
 
 
 function App() {
   const [subtotal, setSubtotal] = useState(0);
-  const [itemcounts, setItemCounts] = useState(
+  const [itemcount, setItemCounts] = useState(
     menuItems.reduce((acc, item) => ({ ...acc, [item.id]: 0 }), {})
   );
 
   const updateSubtotal = (id, price, quantityChange) => {
     setSubtotal((prevSubtotal) => {
-      const newtotal = prevSubtotal + (price * quantityChange);
-      return parseFloat(newtotal.toFixed(2));
+      const newTotal = prevSubtotal + price * quantityChange;
+      return parseFloat(newTotal.toFixed(2));
     });
 
     setItemCounts((prevCounts) => ({
       ...prevCounts,
       [id]: prevCounts[id] + quantityChange,
     }));
+  };
+
+  const clearTotal = () => {
+    setSubtotal(0);
+    setItemCounts(menuItems.reduce((acc, item) => ({ ...acc, [item.id]: 0 }), {}));
+  };
+
+  function alertOrder(total) {
+    if(total == 0){
+      alert("No items in the cart!");
+    }
+    else {
+      alert("You ordered: "); 
+    }
   };
 
   return (
