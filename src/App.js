@@ -81,6 +81,12 @@ const menuItems = [
 
 
 function App() {
+  const [subtotal, setSubtotal] = useState(0);
+
+  const updateSubtotal = (price, quantityChange) => {
+    setSubtotal((prevSubtotal) => prevSubtotal + price * quantityChange)
+  };
+
   return (
     <div>
       <img id="photo" src="./images/restaurant-logo.jpg" alt="Restaurant Logo" className="logo" />
@@ -95,9 +101,16 @@ function App() {
             title={item.title}
             description={item.description}
             price={item.price}
-          />
+            updateSubtotal ={updateSubtotal}
+          />   
         ))}
+      
     </div>
+
+    <h5>Subtotal: </h5>
+    <h5>{subtotal}</h5>
+    <button>Order</button>
+    <button>Clear All</button>
     </div>
 
   );

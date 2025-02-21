@@ -4,14 +4,20 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // Modify the component to take in all the other properties of a menu item you need and display them in the component.
 // Use bootstrap to style the elements so that it looks like the mockup in the assignment.
 // Hint: You can use the image name to get the image from the images folder.
-const MenuItem = ({ title , image, description, price}) => {
+const MenuItem = ({ title , image, description, price, updateSubtotal}) => {
     const [count, setCount] = useState(0);
-
+    
     const decrease = () => {
         if(count > 0) {
             setCount(count - 1);
+            updateSubtotal(price, -1);
         }
     }
+    const increase = () => {
+        setCount(count + 1);
+        updateSubtotal(price, 1);
+    }
+
     return (
 
     <div className="foodimage">
@@ -21,10 +27,10 @@ const MenuItem = ({ title , image, description, price}) => {
             <h6>{description}</h6>
             <div className="combine">
                 <h4 id="price">{price}</h4>
-
                 <button onClick={decrease}>-</button>
                 <h5>{count}</h5>
-                <button onClick={ () => setCount(count + 1)}>+</button>
+                <button onClick={increase}>+</button>
+
             </div>
         </div>
         
