@@ -113,7 +113,7 @@ function App() {
       .filter(item => itemcount[item.id] > 0)
       .map(item => `${itemcount[item.id]} ${item.title}`)
       .join("\n");
-      alert(`You ordered:\n${ordered}\n\n`);
+      alert(`You ordered:\n${ordered}\n`);
     }
   };
 
