@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './App.css';
 import MenuItem from './components/MenuItem';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
-import { clear } from '@testing-library/user-event/dist/clear';
 
 // import 'bootstrap/dist/css/bootstrap.min.css'; // This imports bootstrap css styles. You can use bootstrap or your own classes by using the className attribute in your elements.
 
@@ -82,8 +81,6 @@ const menuItems = [
 ];
 
 
-
-
 function App() {
   const [subtotal, setSubtotal] = useState(0);
   const [itemcount, setItemCounts] = useState(
@@ -112,7 +109,11 @@ function App() {
       alert("No items in the cart!");
     }
     else {
-      alert("You ordered: "); 
+      const ordered = menuItems
+      .filter(item => itemcount[item.id] > 0)
+      .map(item => `${itemcount[item.id]} ${item.title}`)
+      .join("\n");
+      alert(`You ordered:\n${ordered}\n\n`);
     }
   };
 
